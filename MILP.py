@@ -2,7 +2,6 @@ import streamlit as st
 import pulp
 import pandas as pd
 import plotly.graph_objects as go
-import matplotlib 
 
 # -------------------------------------------------------------------
 # Page Config
@@ -18,12 +17,11 @@ Use the tabs below to set parameters, run optimization, and visualize results.
 # -------------------------------------------------------------------
 # Tabs
 # -------------------------------------------------------------------
-tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs([
+tab1, tab2, tab3, tab4, tab5 = st.tabs([
     "🚚 Warehouses",
     "👥 Customers",
     "💰 Shipping Costs",
     "📊 Optimization Results",
-    "📈 Visualization",
     "ℹ️ About"
 ])
 
@@ -121,43 +119,8 @@ with tab4:
         except Exception as e:
             st.error(f"⚠️ Error: {str(e)}")
 
-# ---------------- Tab 5: Visualization ----------------
-with tab5:
-    st.subheader("📈 Shipping Flow Visualization")
-    if 'result_df' in st.session_state and not st.session_state['result_df'].empty:
-        df = st.session_state['result_df']
-
-        # Sankey chart
-        all_nodes = list(df['Warehouse'].unique()) + list(df['Customer'].unique())
-        node_indices = {node: i for i, node in enumerate(all_nodes)}
-
-        sankey_fig = go.Figure(go.Sankey(
-            node=dict(
-                pad=15,
-                thickness=20,
-                line=dict(color="black", width=0.5),
-                label=all_nodes,
-                color="blue"
-            ),
-            link=dict(
-                source=[node_indices[w] for w in df['Warehouse']],
-                target=[node_indices[c] for c in df['Customer']],
-                value=df['Units Shipped']
-            )
-        ))
-        sankey_fig.update_layout(title_text="Warehouse → Customer Shipments", font_size=14)
-        st.plotly_chart(sankey_fig, use_container_width=True)
-
-        # Heatmap of total cost
-        cost_matrix = df.pivot(index='Warehouse', columns='Customer', values='Total Cost').fillna(0)
-        st.subheader("💰 Total Cost Heatmap")
-        st.dataframe(cost_matrix.style.background_gradient(cmap="Reds"), use_container_width=True)
-
-    else:
-        st.info("Run the optimization first to see visualization.")
-
 # ---------------- Tab 6: About ----------------
-with tab6:
+with tab5:
     st.subheader("ℹ️ About")
     st.markdown("""
     **Developer:** Chadee Fouad - MyWorkDropBox@gmail.com  
