@@ -27,7 +27,7 @@ tab1, tab2, tab3, tab4, tab5 = st.tabs([
 
 # ---------------- Tab 1: Warehouses ----------------
 with tab1:
-    st.subheader("🏗 Define Warehouses")
+    st.subheader("🚚 Define Warehouses")
     n_warehouses = st.number_input("Number of Warehouses", min_value=1, max_value=10, value=2)
     warehouses = []
     capacity = {}
