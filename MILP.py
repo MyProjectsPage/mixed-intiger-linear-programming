@@ -18,7 +18,7 @@ Use the tabs below to set parameters, run optimization, and visualize results.
 # Tabs
 # -------------------------------------------------------------------
 tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs([
-    "🏗 Warehouses",
+    "🚚 Warehouses",
     "👥 Customers",
     "💰 Shipping Costs",
     "📊 Optimization Results",
