@@ -2,6 +2,7 @@ import streamlit as st
 import pulp
 import pandas as pd
 import plotly.graph_objects as go
+import matplotlib 
 
 # -------------------------------------------------------------------
 # Page Config
