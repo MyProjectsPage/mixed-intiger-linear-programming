@@ -156,8 +156,8 @@ with tab4:
 # Tab 5 – About
 # -------------------------------------------------------------------
 with tab5:
-    st.markdown("## About")
-    st.markdown("Developer: Chadee Fouad - MyWorkDropBox@gmail.com  \nDevelopment Date: Oct. 2025.") 
+    st.markdown("##ℹ️ About")
+    st.markdown("Developer: Chadee Fouad - MyWorkDropBox@gmail.com  \nDevelopment Date: Nov. 2025.") 
     st.markdown("[Click here to visit my website](https://myprojectspage.github.io/index.html)")
     st.write()
 
