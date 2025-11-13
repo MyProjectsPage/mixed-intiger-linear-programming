@@ -26,8 +26,8 @@ It uses **Mixed Integer Linear Programming (MILP)** to calculate the optimal sol
 # -------------------------------------------------------------------
 # Create Tabs
 # -------------------------------------------------------------------
-tab1, tab2, tab3, tab4 = st.tabs([
-    "🏗 Warehouses",
+tab1, tab2, tab3, tab4, tab5 = st.tabs([
+    "🚚 Warehouses",
     "👥 Customers",
     "💰 Shipping Costs",
     "📊 Optimization Results"
@@ -150,6 +150,17 @@ with tab4:
                 st.warning("Solver did not find an optimal solution.")
         except Exception as e:
             st.error(f"⚠️ Error: {str(e)}")
+
+# -------------------------------------------------------------------
+# Tab 5 – About
+# -------------------------------------------------------------------
+with tab5:
+    st.markdown("## About")
+    st.markdown("Developer: Chadee Fouad - MyWorkDropBox@gmail.com  \nDevelopment Date: Oct. 2025.") 
+    st.markdown("[Click here to visit my website](https://myprojectspage.github.io/index.html)")
+    st.write()
+
+
 
 # -------------------------------------------------------------------
 # Footer
